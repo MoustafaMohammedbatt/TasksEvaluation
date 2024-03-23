@@ -22,6 +22,8 @@ namespace TasksEvaluation.Core.Configurations
                .IsRequired()
                .OnDelete(DeleteBehavior.Cascade);
 
+
+
             builder.HasOne(a => a.Group)
                    .WithMany(g => g.Assignments)
                    .HasForeignKey(a => a.GroupId)

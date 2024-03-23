@@ -8,7 +8,6 @@ namespace TaskEvaluation.Web.EntityConfigs
         public EvaluationGradeValidator()
         {
             RuleFor(grade => grade.Grade).NotEmpty().WithMessage("Grade is required");
-            RuleFor(grade => grade.Solution).NotNull().WithMessage("Solution is required");
 
         }
     }

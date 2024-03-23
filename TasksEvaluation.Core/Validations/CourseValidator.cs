@@ -10,7 +10,7 @@ namespace TaskEvaluation.Web.EntityConfigs
 
             RuleFor(course => course.Title).NotNull().NotEmpty().WithMessage("Title is required");
             RuleFor(course => course.IsCompleted).NotNull().NotEmpty().WithMessage("Completion status is required");
-            RuleFor(c=>c.Title).NotNull().NotEmpty();
+            
         }
     }
 }
