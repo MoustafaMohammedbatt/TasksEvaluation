@@ -14,11 +14,11 @@ namespace TasksEvaluation.Core.Configurations
         public void Configure(EntityTypeBuilder<EvaluationGrade> builder)
         {
 
-            builder.HasOne(s => s.Solution)
-              .WithOne(g => g.Grade)
-              .HasForeignKey<Solution>(g => g.GradeId)
-              .IsRequired()
-              .OnDelete(DeleteBehavior.Cascade);
+            builder.HasMany(g => g.Solutions)
+               .WithOne(s => s.Grade)
+               .HasForeignKey(s => s.GradeId)
+               .IsRequired()
+               .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

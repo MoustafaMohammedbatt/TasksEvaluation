@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33712.159
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TasksEvaluation.Web", "TasksEvaluation.Web\TasksEvaluation.Web.csproj", "{868761C0-6C7C-436E-9C44-4559FD7870A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TasksEvaluation.Web", "TasksEvaluation.Web\TasksEvaluation.Web.csproj", "{868761C0-6C7C-436E-9C44-4559FD7870A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TasksEvaluation.Core", "TasksEvaluation.Core\TasksEvaluation.Core.csproj", "{8191D427-003B-4F91-8ADD-080FC1D7DB4F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TasksEvaluation.Core", "TasksEvaluation.Core\TasksEvaluation.Core.csproj", "{8191D427-003B-4F91-8ADD-080FC1D7DB4F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TasksEvaluation.Infrastructure", "TasksEvaluation.Infrastructure\TasksEvaluation.Infrastructure.csproj", "{84E2E74A-1FF6-4B87-A400-CF2B3C549E22}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{8191D427-003B-4F91-8ADD-080FC1D7DB4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8191D427-003B-4F91-8ADD-080FC1D7DB4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8191D427-003B-4F91-8ADD-080FC1D7DB4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84E2E74A-1FF6-4B87-A400-CF2B3C549E22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84E2E74A-1FF6-4B87-A400-CF2B3C549E22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84E2E74A-1FF6-4B87-A400-CF2B3C549E22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84E2E74A-1FF6-4B87-A400-CF2B3C549E22}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -15,6 +15,8 @@ namespace TasksEvaluation.Core.Configurations
         {
             builder.HasKey(a => a.Id);
             builder.Property(a => a.Title).IsRequired();
+            builder.Property(a => a.Description).IsRequired();
+            builder.Property(a => a.DeadLine).IsRequired();
 
             builder.HasOne(a => a.Solution)
                .WithOne(s => s.Assignment)
@@ -22,13 +24,13 @@ namespace TasksEvaluation.Core.Configurations
                .IsRequired()
                .OnDelete(DeleteBehavior.Cascade);
 
-
-
             builder.HasOne(a => a.Group)
                    .WithMany(g => g.Assignments)
                    .HasForeignKey(a => a.GroupId)
                    .IsRequired()
                    .OnDelete(DeleteBehavior.Cascade);
+
+            
         }
     }
 }
