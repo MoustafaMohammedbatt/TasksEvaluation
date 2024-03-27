@@ -1,9 +1,10 @@
 ﻿using FluentValidation;
+using TasksEvaluation.Core.DTOs;
 using TasksEvaluation.Core.Entities.Common;
 
 namespace TaskEvaluation.Web.Validator
 {
-    public class BaseValidator<T> : AbstractValidator<Base> 
+    public class BaseValidator<T> : AbstractValidator<BaseDTO> 
     {
         public BaseValidator()
         {

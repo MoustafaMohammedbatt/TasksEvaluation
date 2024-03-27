@@ -1,9 +1,10 @@
 ﻿using FluentValidation;
+using TasksEvaluation.Core.DTOs;
 using TasksEvaluation.Core.Entities.Business;
 
 namespace TaskEvaluation.Web.EntityConfigs
 {
-    public class CourseValidator : AbstractValidator<Course>
+    public class CourseValidator : AbstractValidator<CourseDTO>
     {
         public CourseValidator() 
         {

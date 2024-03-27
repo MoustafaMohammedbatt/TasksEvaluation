@@ -3,10 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TasksEvaluation.Core.DTOs;
 
 namespace TasksEvaluation.Core.Interfaces.IServices
 {
-    public class IAssignmentService
+    public interface IAssignmentService
     {
+        Task<IEnumerable<AssignmentDTO>> GetCourses();
+        Task<AssignmentDTO> GetCourse(int id);
+        Task<AssignmentDTO> Create(AssignmentDTO model);
+        Task Update(AssignmentDTO model);
+        Task Delete(int id);
     }
 }

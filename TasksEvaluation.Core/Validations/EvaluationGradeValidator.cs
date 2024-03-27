@@ -1,9 +1,10 @@
 ﻿using FluentValidation;
+using TasksEvaluation.Core.DTOs;
 using TasksEvaluation.Core.Entities.Business;
 
 namespace TaskEvaluation.Web.EntityConfigs
 {
-    public class EvaluationGradeValidator : AbstractValidator<EvaluationGrade>
+    public class EvaluationGradeValidator : AbstractValidator<EvaluationGradeDTO>
     {
         public EvaluationGradeValidator()
         {

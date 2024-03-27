@@ -1,9 +1,10 @@
 ﻿using FluentValidation;
+using TasksEvaluation.Core.DTOs;
 using TasksEvaluation.Core.Entities.Business;
 
 namespace TasksEvaluation.Core.Validations
 {
-    public class AssignmentValidator : AbstractValidator<Assignment>
+    public class AssignmentValidator : AbstractValidator<AssignmentDTO>
     {
         public AssignmentValidator()
         {

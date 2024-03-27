@@ -1,13 +1,24 @@
 using FluentValidation;
-using TasksEvaluation.Core.Entities.Business;
+using Microsoft.EntityFrameworkCore;
+using TasksEvaluation.Core.DTOs;
+using TasksEvaluation.Infrastructure.Data;
 
 var builder = WebApplication.CreateBuilder(args);
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+// Add services to the container.
+builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("MyConfig"));
+
+});
+
 // Add Fluent Validation
-builder.Services.AddValidatorsFromAssembly(typeof(Course).Assembly);
+builder.Services.AddValidatorsFromAssembly(typeof(CourseDTO).Assembly);
 
 var app = builder.Build();
 

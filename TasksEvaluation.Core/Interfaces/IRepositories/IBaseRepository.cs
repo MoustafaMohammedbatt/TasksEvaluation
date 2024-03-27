@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace TasksEvaluation.Core.Interfaces.IRepositories
 {
-    public class IBaseRepository
+    public interface IBaseRepository<T> where T : class
     {
+        Task<IEnumerable<T>> GetAll();
+        Task<T> GetById<IdType>(IdType id);
+        Task<T> Create(T model);
+        Task Update(T model);
+        Task Delete(T model);
+        Task SaveChangeAsync();
     }
 }
