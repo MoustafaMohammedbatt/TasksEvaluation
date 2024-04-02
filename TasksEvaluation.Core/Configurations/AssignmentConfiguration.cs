@@ -17,6 +17,7 @@ namespace TasksEvaluation.Core.Configurations
             builder.Property(a => a.Title).IsRequired();
             builder.Property(a => a.Description).IsRequired();
             builder.Property(a => a.DeadLine).IsRequired();
+            
 
             builder.HasOne(a => a.Solution)
                .WithOne(s => s.Assignment)

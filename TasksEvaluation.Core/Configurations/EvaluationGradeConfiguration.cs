@@ -14,6 +14,9 @@ namespace TasksEvaluation.Core.Configurations
         public void Configure(EntityTypeBuilder<EvaluationGrade> builder)
         {
 
+            builder.Property(g => g.Grade).IsRequired();
+
+
             builder.HasMany(g => g.Solutions)
                .WithOne(s => s.Grade)
                .HasForeignKey(s => s.GradeId)

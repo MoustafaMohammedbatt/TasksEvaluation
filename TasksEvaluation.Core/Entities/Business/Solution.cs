@@ -1,11 +1,13 @@
-﻿using TasksEvaluation.Core.Entities.Common;
+﻿using System.ComponentModel.DataAnnotations;
+using TasksEvaluation.Core.Entities.Common;
 
 namespace TasksEvaluation.Core.Entities.Business
 {
     public class Solution : Base
     {
-
+        [Required(ErrorMessage = "SolutionFile is required")]
         public string SolutionFile { get; set; }
+        [Required(ErrorMessage = "Notes is required")]
         public string Notes { get; set; }
         public int? GradeId { get; set; }
         public EvaluationGrade Grade { get; set; }
