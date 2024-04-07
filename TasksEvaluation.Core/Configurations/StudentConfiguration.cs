@@ -14,13 +14,12 @@ namespace TasksEvaluation.Core.Configurations
         public void Configure(EntityTypeBuilder<Student> builder)
         {
             builder.HasKey(s => s.Id);
-            builder.Property(s => s.FullName).IsRequired();
 
             builder.HasOne(s => s.Group)
                    .WithMany(g => g.Students)
                    .HasForeignKey(s => s.GroupId)
-                   .IsRequired()
-                   .OnDelete(DeleteBehavior.Cascade);
+                   .OnDelete(DeleteBehavior.SetNull);
+            // has many with solutions 
 
         }
     }

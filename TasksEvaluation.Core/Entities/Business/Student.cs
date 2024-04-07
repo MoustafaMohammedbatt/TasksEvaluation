@@ -10,7 +10,7 @@ namespace TasksEvaluation.Core.Entities.Business
         public string FullName { get; set; }
 
         [Display(Name = "Mobile Number")]
-        [RegularExpression(@"^\d{10}$", ErrorMessage = "Mobile number must be 10 digits")]
+        [RegularExpression(@"^\d{11}$", ErrorMessage = "Mobile number must be 11 digits")]
         public string MobileNumber { get; set; }
 
         [Display(Name = "Email Address")]
@@ -19,7 +19,7 @@ namespace TasksEvaluation.Core.Entities.Business
         public string Email { get; set; }
 
         [Display(Name = "Profile Picture")]
-        //[MaxLength(255, ErrorMessage = "Profile picture path cannot exceed 255 characters")]
+        //[MaxLength(255, ErrorMessage = "Profile picture path cannot exceed 255 characters")] add extensions
         public string ProfilePic { get; set; }
         public int? GroupId { get; set; }
         public Group Group { get; set; }

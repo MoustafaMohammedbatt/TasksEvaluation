@@ -13,16 +13,12 @@ namespace TasksEvaluation.Core.Configurations
     {
         public void Configure(EntityTypeBuilder<Group> builder)
         {
-
-
             builder.HasKey(g => g.Id);
-            builder.Property(g => g.Title).IsRequired();
 
             builder.HasOne(g => g.Course)
                    .WithMany(c => c.Groups)
                    .HasForeignKey(g => g.CourseId)
-                   .IsRequired()
-                   .OnDelete(DeleteBehavior.Cascade);
+                   .OnDelete(DeleteBehavior.SetNull);
         }
     }
 }

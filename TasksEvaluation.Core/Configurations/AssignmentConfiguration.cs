@@ -14,22 +14,19 @@ namespace TasksEvaluation.Core.Configurations
         public void Configure(EntityTypeBuilder<Assignment> builder)
         {
             builder.HasKey(a => a.Id);
-            builder.Property(a => a.Title).IsRequired();
-            builder.Property(a => a.Description).IsRequired();
-            builder.Property(a => a.DeadLine).IsRequired();
+            //builder.Property(a => a.Title).IsRequired();
+            //builder.Property(a => a.Description).IsRequired();
+            //builder.Property(a => a.DeadLine).IsRequired();
             
 
-            builder.HasOne(a => a.Solution)
+            builder.HasMany(a => a.Solutions)
                .WithOne(s => s.Assignment)
-               .HasForeignKey<Solution>(s => s.AssignmentId)
-               .IsRequired()
-               .OnDelete(DeleteBehavior.Cascade);
+               .OnDelete(DeleteBehavior.SetNull);
 
             builder.HasOne(a => a.Group)
                    .WithMany(g => g.Assignments)
                    .HasForeignKey(a => a.GroupId)
-                   .IsRequired()
-                   .OnDelete(DeleteBehavior.Cascade);
+                   .OnDelete(DeleteBehavior.SetNull);
 
             
         }

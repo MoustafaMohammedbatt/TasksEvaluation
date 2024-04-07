@@ -7,7 +7,6 @@ namespace TasksEvaluation.Core.Entities.Business
     {
         [Required(ErrorMessage = "SolutionFile is required")]
         public string SolutionFile { get; set; }
-        [Required(ErrorMessage = "Notes is required")]
         public string Notes { get; set; }
         public int? GradeId { get; set; }
         public EvaluationGrade Grade { get; set; }

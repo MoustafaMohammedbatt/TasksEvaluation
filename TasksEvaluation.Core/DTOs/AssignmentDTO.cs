@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TasksEvaluation.Core.Filters;
-using TasksEvaluation.Core.Const;
 
 namespace TasksEvaluation.Core.DTOs
 {

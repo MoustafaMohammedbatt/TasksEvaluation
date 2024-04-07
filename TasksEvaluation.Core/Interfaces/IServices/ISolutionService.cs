@@ -9,8 +9,8 @@ namespace TasksEvaluation.Core.Interfaces.IServices
 {
     public interface ISolutionService
     {
-        Task<IEnumerable<SolutionDTO>> GetCourses();
-        Task<SolutionDTO> GetCourse(int id);
+        Task<IEnumerable<SolutionDTO>> GetSolutions();
+        Task<SolutionDTO> GetSolution(int id);
         Task<SolutionDTO> Create(SolutionDTO model);
         Task Update(SolutionDTO model);
         Task Delete(int id);

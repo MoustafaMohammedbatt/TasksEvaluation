@@ -10,17 +10,16 @@ namespace TasksEvaluation.Core.Entities.Business
         [Required(ErrorMessage = "Title is required")]
         public string Title { get; set; }
 
-        [Required(ErrorMessage = "Description is required")]
+        //[Required(ErrorMessage = "Description is required")]
         public string Description { get; set; }
 
-        [DateGreaterThan("Now")]
+        [DateLaterThanNow]
         public DateTime DeadLine { get; set; }
         
         public int? GroupId { get; set; }
         public Group Group { get; }
         
-        public Solution Solution { get; set; }
+        public ICollection<Solution> Solutions { get; set; }
 
-        public DateTime Now { get; set; } = DateTime.Now;
     }
 }

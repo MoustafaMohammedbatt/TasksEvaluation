@@ -9,8 +9,8 @@ namespace TasksEvaluation.Core.Interfaces.IServices
 {
     public interface IAssignmentService
     {
-        Task<IEnumerable<AssignmentDTO>> GetCourses();
-        Task<AssignmentDTO> GetCourse(int id);
+        Task<IEnumerable<AssignmentDTO>> GetAssignments();
+        Task<AssignmentDTO> GetAssignment(int id);
         Task<AssignmentDTO> Create(AssignmentDTO model);
         Task Update(AssignmentDTO model);
         Task Delete(int id);
