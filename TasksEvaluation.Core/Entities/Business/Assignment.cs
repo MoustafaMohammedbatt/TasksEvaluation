@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using TasksEvaluation.Consts;
 using TasksEvaluation.Core.Entities.Common;
 using TasksEvaluation.Core.Filters;
 
@@ -7,7 +8,7 @@ namespace TasksEvaluation.Core.Entities.Business
 {
     public class Assignment : Base
     {
-        [Required(ErrorMessage = "Title is required")]
+        [Required(ErrorMessage = Errors.RequiredField)]
         public string Title { get; set; }
 
         //[Required(ErrorMessage = "Description is required")]
