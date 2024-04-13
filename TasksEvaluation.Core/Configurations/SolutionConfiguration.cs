@@ -21,9 +21,15 @@ namespace TasksEvaluation.Core.Configurations
                .HasForeignKey(sol => sol.StudentId)
                .OnDelete(DeleteBehavior.SetNull);
 
-            // assignment has one
+            builder.HasOne(sol => sol.Assignment)
+               .WithMany(a => a.Solutions)
+               .HasForeignKey(sol => sol.AssignmentId)
+               .OnDelete(DeleteBehavior.SetNull);
+
+            
             // group has one 
-            // has extension 
+
+
         }
     }
 }

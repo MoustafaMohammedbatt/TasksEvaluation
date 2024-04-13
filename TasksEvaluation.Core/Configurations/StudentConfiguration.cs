@@ -19,7 +19,10 @@ namespace TasksEvaluation.Core.Configurations
                    .WithMany(g => g.Students)
                    .HasForeignKey(s => s.GroupId)
                    .OnDelete(DeleteBehavior.SetNull);
-            // has many with solutions 
+
+            builder.HasMany(s => s.Solutions)
+              .WithOne(sol => sol.Student)
+              .OnDelete(DeleteBehavior.SetNull);
 
         }
     }
