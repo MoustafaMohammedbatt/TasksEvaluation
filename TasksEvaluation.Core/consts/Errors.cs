@@ -8,7 +8,7 @@
         public const string ConfirmPasswordNotMatch = "The password and confirmation password do not match.";
         public const string Duplicated = "Another record with the same {0} is already exists!";
         public const string DuplicatedBook = "Book with the same title is already exists with the same author!";
-        public const string NotAllowedExtension = "Only .png, .jpg, .jpeg files are allowed!";
+        public const string NotAllowedExtension = "Only .png|.jpg|.jpeg|.zip|.pdf files are allowed!";
         public const string MaxSize = "File cannot be more than 2MB!";
         public const string NotAllowFutureDates = "Date cannot be in the future!";
         public const string InvalidRange = "{0} should be between {1} and {2}!";
@@ -24,9 +24,6 @@
         public const string DateValidation = "End date must be later than start date.";
         public const string MaxHourDuration = "Duration Must be more Than 1 Hour less Than 24 Hours.";
         public const string MaxLength100char = " Cannot exceed 100 characters";
-
-
-
 
     }
 }

@@ -1,13 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using TasksEvaluation.Consts;
 using TasksEvaluation.Core.Entities.Common;
 
 namespace TasksEvaluation.Core.Entities.Business
 {
     public class Solution : Base
     {
-        [Required(ErrorMessage = "SolutionFile is required")]
-
-        [RegularExpression(@"(.png|.jpg|.jpeg|.zip|.pdf)$", ErrorMessage = "Solution file must end with .png|.jpg|.jpeg|.zip|.pdf")]
+        [Required(ErrorMessage = Errors.RequiredField)]
+        [RegularExpression(@"(.png|.jpg|.jpeg|.zip|.pdf)$", ErrorMessage = Errors.NotAllowedExtension)]
         public string SolutionFile { get; set; }
         public string Notes { get; set; }
         public int? GradeId { get; set; }
