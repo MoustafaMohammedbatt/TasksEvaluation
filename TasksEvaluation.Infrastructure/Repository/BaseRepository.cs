@@ -31,25 +31,15 @@ namespace TasksEvaluation.Infrastructure.Repository
             await _dbContext.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<T>> GetAll()
-        {
-            return await DbSet.AsNoTracking().ToListAsync();
-        }
+        public async Task<IEnumerable<T>> GetAll() => await DbSet.AsNoTracking().ToListAsync();
 
         public async Task<T> GetById<IdType>(IdType id)
         {
             var data = await DbSet.FindAsync(id);
-            if (data is null)
-            {
-                throw new Exception("No data Found");
-            }
-            return data;
+            return data is null ? throw new Exception("No data Found") : data;
         }
 
-        public async Task SaveChangeAsync()
-        {
-            await _dbContext.SaveChangesAsync();
-        }
+        public async Task SaveChangeAsync() => await _dbContext.SaveChangesAsync();
 
         public async Task Update(T model)
         {
