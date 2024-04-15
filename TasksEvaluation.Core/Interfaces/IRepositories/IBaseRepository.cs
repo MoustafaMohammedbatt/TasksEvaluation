@@ -13,6 +13,6 @@ namespace TasksEvaluation.Core.Interfaces.IRepositories
         Task<T> Create(T model);
         Task Update(T model);
         Task Delete(T model);
-        Task SaveChangeAsync();
+        Task SaveChangesAsync();
     }
 }

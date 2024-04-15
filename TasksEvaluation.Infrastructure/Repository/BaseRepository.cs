@@ -21,14 +21,14 @@ namespace TasksEvaluation.Infrastructure.Repository
         public async Task<T> Create(T model)
         {
             await DbSet.AddAsync(model);
-            await _dbContext.SaveChangesAsync();
+            await SaveChangesAsync();
             return model;
         }
 
         public async Task Delete(T model)
         {
             DbSet.Remove(model);
-            await _dbContext.SaveChangesAsync();
+            await SaveChangesAsync();
         }
 
         public async Task<IEnumerable<T>> GetAll() => await DbSet.AsNoTracking().ToListAsync();
@@ -36,15 +36,15 @@ namespace TasksEvaluation.Infrastructure.Repository
         public async Task<T> GetById<IdType>(IdType id)
         {
             var data = await DbSet.FindAsync(id);
-            return data is null ? throw new Exception("No data Found") : data;
+            return data is null ? throw new InvalidOperationException("No data Found") : data;
         }
 
-        public async Task SaveChangeAsync() => await _dbContext.SaveChangesAsync();
+        public async Task SaveChangesAsync() => await SaveChangesAsync();
 
         public async Task Update(T model)
         {
             DbSet.Update(model);
-            await _dbContext.SaveChangesAsync();
+            await SaveChangesAsync();
         }
     }
 }
